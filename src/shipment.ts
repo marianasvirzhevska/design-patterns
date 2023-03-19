@@ -1,4 +1,5 @@
 import { Parcel, ParcelDto } from "./types";
+import { ShipperCreator } from "./shipper";
 
 export class Shipment {
   private parcel: Parcel;
@@ -20,9 +21,10 @@ export class Shipment {
   }
 
   ship(): string {
-    const { shipmentID, fromAddress, toAddress, weight } = this.parcel;
+    const { shipmentID, fromAddress, toAddress } = this.parcel;
+    const shipper = ShipperCreator.createShipper(this.parcel);
 
     return `Shipment with the ID ${shipmentID} will be picked up from ${fromAddress} to ${toAddress} \n\n
-      Cost = ${weight * 39}`;
+      Cost = ${shipper.getCost(this.parcel)}`;
   }
 }
