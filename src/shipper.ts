@@ -48,9 +48,9 @@ class PacificParcelShipper extends Shipper {
       case ParcelType.letters:
         return super.getCost(parcel);
       case ParcelType.packages:
-        return parcel.weight * ChicagoSprintPrices.packages;
+        return parcel.weight * PacificParcelPrices.packages;
       case ParcelType.oversize:
-        return super.getCost(parcel) + parcel.weight * ChicagoSprintPrices.oversize;
+        return super.getCost(parcel) + parcel.weight * PacificParcelPrices.oversize;
     }
   }
 };

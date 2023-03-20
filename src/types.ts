@@ -38,4 +38,10 @@ export enum PacificParcelPrices {
   letters = 0.51,
   packages = 0.19,
   oversize = 0.02
-}
+};
+
+export enum ParcelCodes {
+  Fragile = 'Fragile',
+  DoNotLeave = 'Do Not Leave',
+  ReturnReceiptRequested = 'Return Receipt Requested'
+};
